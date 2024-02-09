@@ -1,0 +1,18 @@
+.footer {
+    width: 100%;
+    height: 60px;
+    margin-top: 50px;
+    background: #171717;
+    color: white;
+    box-shadow: 10px -5px 5px rgb(244, 102, 102);
+}
+
+
+.logo-footer {
+    width: 200px;
+}
+
+.email-footer {
+    width: 300px;
+}
+
