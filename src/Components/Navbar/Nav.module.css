@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+
+.background-nav {
+    background: #171717;
+    margin-bottom: 30px;
+    box-shadow: 10px 5px 5px rgb(244, 102, 102);
+}
+
+.background-nav a {
+    color: white;
+    font-family: "Caveat";
+    font-size: 15pt;
+}
+
+.background-nav a:hover {
+    color: rgb(244, 102, 102);
+}

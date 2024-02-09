@@ -4,10 +4,11 @@ import Navbar from "react-bootstrap/Navbar";
 import {NavLinks} from "./NavLink/Navlink";
 import { nanoid } from "nanoid";
 import navLogo from "./Logo/Logo";
+import classes from "./Nav.module.css"
 
 function NavigationBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className={classes["background-nav"]}>
       <Container className="m-0">
         <Navbar.Brand href="#home">{navLogo({logo:"EpicBooksReact"})}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

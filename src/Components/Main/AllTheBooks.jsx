@@ -520,7 +520,7 @@ const books = [
 
 const EpicBooks = () => {
   return (
-    <div className="container-card d-flex flex-wrap justify-content-evenly gap-3">
+    <div className="d-flex flex-wrap justify-content-evenly gap-3">
       {books.map((book) => (
         <Card className={classes["card"]} key={book.asin}>
           <img src={book.img} alt="Book" />

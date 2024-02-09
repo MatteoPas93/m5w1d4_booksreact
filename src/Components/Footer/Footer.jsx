@@ -8,10 +8,15 @@ const Footer = () => {
           Grazie per aver scelto EpicBooksReact 
         </h6>
          </div>
-        <div className="email-footer">
+        <div className="email-footer d-flex">
         <h6>
             Per qualsiasi problema contattare EpicBooksReact@email.com
         </h6>
+        <div>
+          <button>
+            <a href="./index.html">Top of Page</a>
+          </button>
+        </div>
         </div>
      
     </div>
