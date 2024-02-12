@@ -6,12 +6,14 @@
     /* background-color: #171717;
     border: 2px solid black;
     color: white; */
+    overflow: hidden;
 }
 
 .card img {
     width: 100%;
     aspect-ratio: 1/2;
     object-fit: cover;
+    
 }
 
 .card h4 {
