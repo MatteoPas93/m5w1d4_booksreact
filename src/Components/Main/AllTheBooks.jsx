@@ -7,7 +7,7 @@ const EpicBooks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://epibooks.onrender.com/fantasy?limit=20");
+        const response = await fetch("https://epibooks.onrender.com/fantasy");
         if (!response.ok) {
           throw new Error("Response Failed");
         }
