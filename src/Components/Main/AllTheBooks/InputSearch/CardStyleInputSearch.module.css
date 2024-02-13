@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
 .container-books {
     display: flex;
     justify-content: center;
@@ -8,6 +10,24 @@
 
 .input-search {
     margin-left: 20px;
+}
+
+.input-search input {
+    border-radius: 5px;
+    box-shadow: -2px 2px 5px rgb(244, 102, 102) ;
+}
+
+.input-search button {
+    background: #171717;
+    color: white;
+    font-family: "Caveat";
+    font-size: 13pt;
+    border-radius: 5px;
+    box-shadow: -2px 2px 5px rgb(244, 102, 102);
+}
+
+.input-search button:hover {
+    color: rgb(244, 102, 102);
 }
 
 .card {
