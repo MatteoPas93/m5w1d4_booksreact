@@ -1,0 +1,35 @@
+.container-books {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.input-search {
+    margin-left: 20px;
+}
+
+.card {
+    width: 200px;
+    height: auto;
+    justify-content: flex-start;
+    box-shadow: -5px 5px 5px rgb(244, 102, 102);
+    overflow: hidden;
+    margin-block: 20px;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1/2;
+    object-fit: cover;
+    
+}
+
+.card h4 {
+    padding-left: 10px;
+}
+
+.card p {
+    padding-left: 10px;
+}
