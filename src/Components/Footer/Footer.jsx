@@ -14,7 +14,7 @@ const Footer = () => {
         </h6>
         <div>
           <button>
-            <a href="./index.html">Top Page</a>
+            <a href="./index.html">Start Page</a>
           </button>
         </div>
         </div>
