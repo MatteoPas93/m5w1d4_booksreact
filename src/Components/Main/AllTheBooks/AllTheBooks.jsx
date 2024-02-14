@@ -1,6 +1,6 @@
-import classes from "./AllTheBooks.module.css";
-import { Card } from "react-bootstrap";
+
 import React, { useState, useEffect } from "react";
+import CardBook from "../../Card/Card";
 
 
  export let jsonData = []
@@ -25,17 +25,22 @@ const EpicBooks = () => {
     fetchData();
   }, []);
 
+  const mapArray = (array) => {
+    return array.map((book) => (
+        <CardBook title={book.title}
+                  img={book.img}
+                  category={book.category}
+                  price={book.price}
+                  key={book.asin}
+                 />
+    ));
+  };
+  
+
   return (
     <div className="d-flex flex-wrap justify-content-evenly gap-3">
       {data &&
-        data.map((book) => (
-          <Card className={classes["card"]} key={book.asin}>
-            <img src={book.img} alt="Book" />
-            <h4>{book.title}</h4>
-            <p>{book.category}</p>
-            <p>{book.price}€</p>
-          </Card>
-        ))}
+      mapArray(data)}
     </div>
   );
 };

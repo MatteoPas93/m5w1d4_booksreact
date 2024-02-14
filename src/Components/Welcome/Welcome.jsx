@@ -8,7 +8,7 @@ const AppWelcome = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCounter(prevCounter => prevCounter - 1);
+      setCounter((prevCounter) => prevCounter - 1);
     }, 1000);
 
     return () => {
@@ -26,16 +26,14 @@ const AppWelcome = () => {
     <div>
       {showDiv && (
         <div className={classes["container-title"]}>
-          <h4>
-            Welcome to the most famous books ecommerce <NavLogo />
-          </h4>
-          <p>This message will disappear in {counter} seconds!!</p>
+          <p> Most popular fantasy book ecommerce </p>
+          <NavLogo />
+
+          <p> This message will disappear in {counter} seconds!! </p>
         </div>
       )}
     </div>
   );
 };
-
-
 
 export default AppWelcome;

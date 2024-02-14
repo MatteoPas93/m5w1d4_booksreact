@@ -1,11 +1,7 @@
-
 .card {
     width: 300px;
     justify-content: space-between;
     box-shadow: -5px 5px 5px rgb(244, 102, 102);
-    /* background-color: #171717;
-    border: 2px solid black;
-    color: white; */
     overflow: hidden;
 }
 
