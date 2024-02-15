@@ -32,13 +32,15 @@ const SearchInput = () => {
         <button onClick={searchResults}> Search </button>
       </div>
       <div className={classes["container-books"]}>
-        {filteredBooks.map((book) => ( 
+        {filteredBooks.map((book) => (
           <Card className={classes["card"]} key={book.asin}>
             <img src={book.img} alt="Book" />
             <h4>{book.title}</h4>
           </Card>
         ))}
-        {showNoResults && <h5 className={classes["not-found"]}>Book not found</h5>}
+        {showNoResults && (
+          <h5 className={classes["not-found"]}>Book not found</h5>
+        )}
       </div>
     </>
   );

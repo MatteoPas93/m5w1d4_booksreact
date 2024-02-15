@@ -1,21 +1,20 @@
 .card {
-    width: 300px;
-    justify-content: space-between;
-    box-shadow: -5px 5px 5px rgb(244, 102, 102);
-    overflow: hidden;
+  width: 300px;
+  justify-content: space-between;
+  box-shadow: -5px 5px 5px rgb(244, 102, 102);
+  overflow: hidden;
 }
 
 .card img {
-    width: 100%;
-    aspect-ratio: 1/2;
-    object-fit: cover;
-    
+  width: 100%;
+  aspect-ratio: 1/2;
+  object-fit: cover;
 }
 
 .card h4 {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .card p {
-    padding-left: 10px;
+  padding-left: 10px;
 }
