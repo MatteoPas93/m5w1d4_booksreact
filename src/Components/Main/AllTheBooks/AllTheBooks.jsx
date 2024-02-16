@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
-import CardBook from "../../Card/Card";
+import CardBook from "../../Card/SingleBook";
 
 export let jsonData = [];
 const EpicBooks = () => {
   const [data, setData] = useState("");
-  // const [loading, setLoading] = useState(false)
   useEffect(() => {
     const fetchData = async () => {
-      // setLoading(true)
+     
       try {
-        const response = await fetch("https://epibooks.onrender.com/fantasy");
+        const response = await fetch("https://striveschool-api.herokuapp.com/books", 
+        {
+          headers: {
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNmNjhlMjA0NTcyZjAwMTk0OTM5NTgiLCJpYXQiOjE3MDgwOTE2MTgsImV4cCI6MTcwOTMwMTIxOH0.4WIOaHC0kc_1yvuly5YFr9w1gAL-ie7rgbByotZWHyg"
+          }
+        });
         if (!response.ok) {
           throw new Error("Response Failed");
         }
         jsonData = await response.json();
+        console.log(jsonData);
         setData(jsonData);
-        // setLoading(false)
+        
       } catch (err) {
         console.error(err);
       }

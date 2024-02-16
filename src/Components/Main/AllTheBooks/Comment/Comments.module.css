@@ -1,0 +1,11 @@
+.recensione {
+    width: 100px;
+    height: 70px;
+}
+
+.commentsArea {
+    width: 300px;
+    height: auto;
+    background: #171717;
+    color: white;
+}

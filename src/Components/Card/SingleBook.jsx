@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import classes from "./Card.module.css";
+import classes from "./SingleBook.module.css";
+import CommentArea from "../Main/AllTheBooks/Comment/CommentArea";
 
 const CardBook = (props) => {
   const [selected, setSelected] = useState(false);
@@ -10,10 +11,11 @@ const CardBook = (props) => {
   };
 
   const borderStyle = {
-    borderColor: selected ? "red" : "black",
+    borderColor: selected ? "red"  : "black",
   };
 
   return (
+    <>
     <Card
       className={classes["card"]}
       key={props.asin}
@@ -25,6 +27,8 @@ const CardBook = (props) => {
       <p>{props.category}</p>
       <p>{props.price}€</p>
     </Card>
+    {selected && <CommentArea />}
+    </>
   );
 };
 
