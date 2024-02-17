@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import SingleComment from "./SingleComment";
 
-const CommentList = ({ asin }) => {
-  const [data, setData] = useState();
+const CommentList = ( {asin} ) => {
+  const [data, setData] = useState([]);
+  // console.log("asin", asin);
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -40,7 +41,7 @@ const CommentList = ({ asin }) => {
             key={comment._id}
             comment={comment.comment}
             rate={comment.rate}
-            author={comment.author}
+            asin={comment.elementId}
           />
         ))}
     </div>

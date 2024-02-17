@@ -3,7 +3,7 @@ import CardBook from "../../Card/SingleBook";
 
 export let jsonData = [];
 const EpicBooks = () => {
-  const [data, setData] = useState("");
+  const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
      
@@ -18,8 +18,8 @@ const EpicBooks = () => {
           throw new Error("Response Failed");
         }
         jsonData = await response.json();
-        console.log(jsonData);
         setData(jsonData);
+        console.log(jsonData);
         
       } catch (err) {
         console.error(err);
@@ -27,24 +27,26 @@ const EpicBooks = () => {
     };
     fetchData();
   }, []);
-
+  
   const mapArray = (array) => {
     return array.map((book) => (
       <CardBook
-        title={book.title}
-        img={book.img}
-        category={book.category}
-        price={book.price}
-        key={book.asin}
+      title={book.title}
+      img={book.img}
+      category={book.category}
+      price={book.price}
+      key={book.asin}
+      asin={book.asin}
       />
-    ));
-  };
-
+      ));
+    };
+    
   return (
     <div className="d-flex flex-wrap justify-content-evenly gap-3">
       {data && mapArray(data)}
     </div>
   );
 };
+
 
 export default EpicBooks;

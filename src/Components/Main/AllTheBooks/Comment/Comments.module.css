@@ -5,7 +5,14 @@
 
 .commentsArea {
     width: 300px;
-    height: auto;
-    background: #171717;
-    color: white;
+    height: 750px;
+    overflow-y: scroll;
+}
+
+.border-comment {
+    border: 1px solid black;
+}
+
+.border-comment p {
+    padding-inline: 10px;
 }
