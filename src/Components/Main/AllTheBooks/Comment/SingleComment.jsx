@@ -1,9 +1,9 @@
-const SingleComment = (props) => {
+const SingleComment = ({author, rate, comment}) => {
     return (
         <div>
-            <p>{props.asin}</p>
-            <p>{props.comment}</p>
-            <p>{props.rate}</p>
+            <p>Author:{author}</p>
+            <p>{comment}</p>
+            <p>Rate:{rate}</p>
         </div>
     )
 }

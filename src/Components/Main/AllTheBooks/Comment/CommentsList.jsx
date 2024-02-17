@@ -1,8 +1,8 @@
-import SingleComment from "./SingleComment";
 import { useState, useEffect } from "react";
+import SingleComment from "./SingleComment";
 
 const CommentList = ({ asin }) => {
-  const [comments, setComments] = useState([]);
+  const [data, setData] = useState();
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -17,21 +17,32 @@ const CommentList = ({ asin }) => {
             },
           }
         );
+        if (!response.ok) {
+          throw new Error("Error");
+        }
+
         const data = await response.json();
-        setComments(data);
+        setData(data);
+
+      
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchComments();
   }, [asin]);
 
   return (
     <div>
-      {comments.map((comment, asin) => (
-        <SingleComment asin={asin} comment={comment}  />
-      ))}
+      {data &&
+        data.map((comment) => (
+          <SingleComment
+            key={comment._id}
+            comment={comment.comment}
+            rate={comment.rate}
+            author={comment.author}
+          />
+        ))}
     </div>
   );
 };
