@@ -1,18 +1,14 @@
-import AddComment from './AddComments';
-import CommentList from './CommentsList';
-import classes from "./Comments.module.css"
+import AddComment from "./AddComments";
+import CommentList from "./CommentsList";
+import classes from "./Comments.module.css";
 
-
-const CommentArea = ({asin}) => {
-   return (
+const CommentArea = ({ asin }) => {
+  return (
     <div className={classes["commentsArea"]}>
-    <AddComment asin={asin} />
-    <CommentList asin={asin} />
+      <AddComment asin={asin} />
+      <CommentList asin={asin} />
     </div>
-)
-}
+  );
+};
 
-export default CommentArea
-
-
-
+export default CommentArea;
