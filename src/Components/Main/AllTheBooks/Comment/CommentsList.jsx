@@ -3,7 +3,8 @@ import SingleComment from "./SingleComment";
 
 const CommentList = ( {asin} ) => {
   const [data, setData] = useState([]);
-  // console.log("asin", asin);
+
+  
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -30,8 +31,11 @@ const CommentList = ( {asin} ) => {
         console.error(error);
       }
     };
+    
     fetchComments();
   }, [asin]);
+
+  
 
   return (
     <div>
@@ -42,6 +46,7 @@ const CommentList = ( {asin} ) => {
             comment={comment.comment}
             rate={comment.rate}
             asin={comment.elementId}
+            _id={comment._id}
           />
         ))}
     </div>
@@ -49,3 +54,5 @@ const CommentList = ( {asin} ) => {
 };
 
 export default CommentList;
+
+

@@ -1,14 +1,31 @@
+import { useState } from "react"
 import classes from "./Comments.module.css"
 import { deleteComment } from "./DeleteComment"
-// import { nanoid } from "nanoid"
 
-const SingleComment = ({comment, rate, elementId }) => {
+const SingleComment = ({comment, rate, elementId, _id, onDelete }) => {
+    const [isDeleted, setIsDeleted] = useState(false)
+
+    const commentId = _id
+
+  const handleDeleteComment = async () => {
+    try {
+      await deleteComment(commentId)
+      setIsDeleted(true)
+      onDelete(commentId)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  if (isDeleted) {
+    return null;
+  }
+
     return (
-        <div  className={classes["border-comment"]}>
+        <div id={commentId} className={classes["border-comment"]}>
             <p>{comment}</p>
             <p>Rate:{rate}</p>
             <p>{elementId}</p>
-            <button onClick={deleteComment} className="mb-2 ms-2">Delete</button>
+            <button onClick={handleDeleteComment} className="mb-2 ms-2">Delete</button>
         </div>
     )
 }
