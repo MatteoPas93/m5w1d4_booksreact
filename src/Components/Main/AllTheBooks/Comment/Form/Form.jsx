@@ -60,7 +60,7 @@ const FormMessage = ({ asin }) => {
   }, [commentData]);
 
   return (
-    <>
+    <div className={classes["form-width"]}>
       <Form
         className="mb-3"
         validated={validated}
@@ -101,7 +101,7 @@ const FormMessage = ({ asin }) => {
             feedbackType="invalid"
           />
         </Form.Group>
-        <Button type="submit">Submit Form</Button>
+        <Button type="submit">Send comment</Button>
       </Form>
 
       {comments &&
@@ -114,7 +114,7 @@ const FormMessage = ({ asin }) => {
             </button>
           </div>
         ))}
-    </>
+    </div>
   );
 };
 

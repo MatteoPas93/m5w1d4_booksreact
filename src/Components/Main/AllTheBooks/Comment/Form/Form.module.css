@@ -1,7 +1,26 @@
 .border-comment {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .border-comment p {
-    padding-inline: 10px;
+  padding-inline: 10px;
+}
+
+.form-width {
+  width: 100%;
+}
+
+.form-width button {
+  background: #171717;
+  color: white;
+  font-family: "Caveat";
+  font-size: 13pt;
+  border-radius: 5px;
+  box-shadow: -2px 2px 5px rgb(244, 102, 102);
+}
+
+
+.form-width button:hover {
+    color: rgb(244, 102, 102);
+    background: #171717;
 }
