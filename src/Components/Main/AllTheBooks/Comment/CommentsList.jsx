@@ -43,6 +43,7 @@ const CommentList = ( {asin} ) => {
         data.map((comment) => (
           <SingleComment
             key={comment._id}
+            author={comment.author}
             comment={comment.comment}
             rate={comment.rate}
             asin={comment.elementId}

@@ -31,7 +31,7 @@ const FormMessage = ({ asin }) => {
   };
 
   const fetchAsin = async (comment) => {
-    await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+   await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
       method: "POST",
       body: JSON.stringify(comment),
       headers: {

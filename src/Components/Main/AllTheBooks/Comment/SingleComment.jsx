@@ -2,7 +2,7 @@ import { useState } from "react";
 import classes from "./Comments.module.css";
 import { deleteComment } from "./DeleteComment";
 
-const SingleComment = ({ comment, rate, elementId, _id }) => {
+const SingleComment = ({ comment, rate, author, _id }) => {
   const [isDeleted, setIsDeleted] = useState(false);
 
   const commentId = _id;
@@ -21,9 +21,9 @@ const SingleComment = ({ comment, rate, elementId, _id }) => {
 
   return (
     <div id={commentId} className={classes["border-comment"]}>
+      <p>{author}</p>
       <p>{comment}</p>
       <p>Rate:{rate}</p>
-      <p>{elementId}</p>
       <button onClick={handleDeleteComment} className="mb-2 ms-2">
         Delete
       </button>
