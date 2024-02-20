@@ -15,7 +15,6 @@ const FormMessage = ({ asin }) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.stopPropagation();
       return;
     }
 
@@ -30,7 +29,7 @@ const FormMessage = ({ asin }) => {
     setValidated(true);
   };
 
-  const fetchAsin = async (comment) => {
+  const fetchPost = async (comment) => {
    await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
       method: "POST",
       body: JSON.stringify(comment),
@@ -46,7 +45,7 @@ const FormMessage = ({ asin }) => {
     const sendComment = async () => {
       try {
         if (commentData) {
-          await fetchAsin(commentData);
+          await fetchPost(commentData);
         }
       } catch (error) {
         console.error(error);

@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import SingleComment from "./SingleComment";
 
-const CommentList = ( {asin} ) => {
+const CommentList = ({ asin }) => {
   const [data, setData] = useState([]);
-
-  
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -25,17 +23,13 @@ const CommentList = ( {asin} ) => {
 
         const data = await response.json();
         setData(data);
-
-      
       } catch (error) {
         console.error(error);
       }
     };
-    
+
     fetchComments();
   }, [asin]);
-
-  
 
   return (
     <div>
@@ -55,5 +49,3 @@ const CommentList = ( {asin} ) => {
 };
 
 export default CommentList;
-
-

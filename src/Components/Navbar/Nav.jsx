@@ -5,8 +5,11 @@ import {NavLinks} from "./NavLink/Navlink";
 import { nanoid } from "nanoid";
 import navLogo from "./Logo/Logo";
 import classes from "./Nav.module.css"
+import SearchInput from "../Main/AllTheBooks/InputSearch/SearchInput";
+
 
 function NavigationBar() {
+
   return (
     <Navbar expand="lg" className={classes["background-nav"]}>
       <Container className="m-0">
@@ -20,6 +23,7 @@ function NavigationBar() {
             )})}
           </Nav>
         </Navbar.Collapse>
+        <SearchInput/>
       </Container>
     </Navbar>
   );
