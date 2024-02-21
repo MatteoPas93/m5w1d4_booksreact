@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import SingleComment from "./SingleComment";
+import { useSelector } from "react-redux";
+import { isRendering } from "../../../../Reducer/booksSlice";
 
 const CommentList = ({ asin }) => {
   const [data, setData] = useState([]);
+  const rendering = useSelector(isRendering)
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -29,7 +32,7 @@ const CommentList = ({ asin }) => {
     };
 
     fetchComments();
-  }, [asin]);
+  }, [asin, rendering]);
 
   return (
     <div>

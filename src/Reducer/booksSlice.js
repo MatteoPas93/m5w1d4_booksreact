@@ -8,6 +8,7 @@ const initialState = {
   books: [],
   isLoading: false,
   error: null,
+  rendering: false
 };
 
 export const getBooks = createAsyncThunk("books/GETBooks", async () => {
@@ -32,6 +33,11 @@ const booksSlice = createSlice({
         return book.title.toLowerCase().includes(lowerCasePayload);
       });
     },
+    handleRendering: (state) => {
+      state.rendering = !state.rendering
+      console.log(state.rendering);
+    }
+    
   },
   extraReducers: (builder) => {
     builder
@@ -52,6 +58,7 @@ const booksSlice = createSlice({
 export const allBooks = (state) => state.booksData.books;
 export const isAllBooksLoading = (state) => state.booksData.isLoading;
 export const isAllBooksError = (state) => state.booksData.error;
-export const { filterBooks } = booksSlice.actions;
+export const { filterBooks, handleRendering } = booksSlice.actions;
+export const isRendering = (state) => state.booksData.rendering
 
 export default booksSlice.reducer;
