@@ -33,3 +33,7 @@ const CardBook = ({ img, title, category, price, asin }) => {
 };
 
 export default CardBook;
+
+// export const setSelectedCard = (selectedCard) => {
+//   return { type: 'SET_SELECTED_CARD', payload: selectedCard};
+// };

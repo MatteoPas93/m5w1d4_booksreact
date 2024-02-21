@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const url = "https://striveschool-api.herokuapp.com/books";
-const key =
+export const apiKey =
 "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNmNjhlMjA0NTcyZjAwMTk0OTM5NTgiLCJpYXQiOjE3MDgwOTE2MTgsImV4cCI6MTcwOTMwMTIxOH0.4WIOaHC0kc_1yvuly5YFr9w1gAL-ie7rgbByotZWHyg";
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
 export const getBooks = createAsyncThunk("books/GETBooks", async () => {
   try {
     const response = await axios.get(url, {
-      headers: { Authorization: `${key}` },
+      headers: { Authorization: `${apiKey}` },
     });
     return await response.data;
   } catch (error) {
@@ -28,7 +28,7 @@ const booksSlice = createSlice({
   reducers: {
     filterBooks: (state, action) => {
       const lowerCasePayload = action.payload.toLowerCase();
-      state.books = state.books.filter((book) => {
+       state.books = state.books.filter((book) => {
         return book.title.toLowerCase().includes(lowerCasePayload);
       });
     },

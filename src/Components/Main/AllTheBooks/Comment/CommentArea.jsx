@@ -4,12 +4,17 @@ import classes from "./Comments.module.css";
 import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
+// import { setSelectedCard } from "../../../Card/SingleBook";
+// import { useDispatch } from "react-redux";
 
 const CommentArea = ({ asin }) => {
   const [showModal, setShowModal] = useState(true);
 
+  // const dispatch = useDispatch()
+
   const handleCloseModal = () => {
     setShowModal(false);
+    // dispatch(setSelectedCard(false))
   };
 
   return (

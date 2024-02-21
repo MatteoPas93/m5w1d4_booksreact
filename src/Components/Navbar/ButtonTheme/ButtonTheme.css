@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
+
+.light-theme {
+    background: white;
+}
+
+.dark-theme {
+    background: #171717;
+}
+
+.button-theme {
+    border-radius: 5px;
+    background: black;
+    color: white;
+    font-family: "Caveat";
+}
+
+.button-theme:hover {
+    color: rgb(244, 102, 102);
+}

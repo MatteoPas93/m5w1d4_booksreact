@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import CardBook from "../../Card/SingleBook";
 import { useDispatch, useSelector } from "react-redux";
 import { allBooks, getBooks } from "../../../Reducer/booksSlice";
-
+import "./AllTheBooks.css"
 const EpicBooks = () => {
   const books = useSelector(allBooks);
   const dispatch = useDispatch();
@@ -26,7 +26,11 @@ const EpicBooks = () => {
 
   return (
     <div className="d-flex flex-wrap justify-content-evenly gap-3">
-      {books && mapArray(books)}
+      {books && books.length > 0 ? (
+        mapArray(books)
+      ) : (
+        <div className="notFound-background"> <h4>Book not found </h4>  </div>
+      )}
     </div>
   );
 };

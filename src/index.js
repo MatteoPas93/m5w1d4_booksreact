@@ -6,10 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import booksReducer from "./Reducer/booksSlice.js"
+import themeReducer from "./Reducer/themeSlice.js"
 
 
 const reducer = combineReducers({
   booksData: booksReducer,
+  theme: themeReducer,
 });
 
 const store = configureStore({ reducer });

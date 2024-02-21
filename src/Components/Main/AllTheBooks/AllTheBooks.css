@@ -1,0 +1,11 @@
+.notFound-background {
+    background: #f89595;
+    border: 1px solid red;
+    color: white;
+    width: 220px;
+    height: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

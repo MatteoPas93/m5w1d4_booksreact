@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { apiKey } from "../../../../../Reducer/booksSlice";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -35,8 +36,7 @@ const FormMessage = ({ asin }) => {
       body: JSON.stringify(comment),
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNmNjhlMjA0NTcyZjAwMTk0OTM5NTgiLCJpYXQiOjE3MDgwOTE2MTgsImV4cCI6MTcwOTMwMTIxOH0.4WIOaHC0kc_1yvuly5YFr9w1gAL-ie7rgbByotZWHyg",
+        Authorization: `${apiKey}`,
       },
     });
   };

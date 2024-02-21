@@ -6,6 +6,7 @@ import { nanoid } from "nanoid";
 import navLogo from "./Logo/Logo";
 import classes from "./Nav.module.css"
 import SearchInput from "../Main/AllTheBooks/InputSearch/SearchInput";
+import ButtonTheme from "./ButtonTheme/ButtonTheme";
 
 
 function NavigationBar() {
@@ -24,6 +25,7 @@ function NavigationBar() {
           </Nav>
         </Navbar.Collapse>
         <SearchInput/>
+        <ButtonTheme/>
       </Container>
     </Navbar>
   );
