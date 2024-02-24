@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import classes from "./Form.module.css";
 import { deleteComment } from "../DeleteComment";
 import { useDispatch } from "react-redux";
-const FormMessage = ({ asin }) => {
+const FormMessage = ({asin, fetchComments}) => {
   const [commentData, setCommentData] = useState();
   const [validated, setValidated] = useState(false);
   const [comments, setComments] = useState([]);
@@ -108,7 +108,7 @@ const FormMessage = ({ asin }) => {
 
       {comments &&
         comments.map((comment, index) => (
-          <div className={classes["border-comment"]} key={index}>
+          <div id={comment._id} asin={comment.elementId} className={classes["border-comment"]} key={index}>
             <p>{comment.comment}</p>
             <p>Rate: {comment.rate}</p>
             <button onClick={deleteComment} className="mb-2 ms-2">

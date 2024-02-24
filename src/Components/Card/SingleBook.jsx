@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import classes from "./SingleBook.module.css";
-import CommentArea from "../Main/AllTheBooks/Comment/CommentArea";
+import { useDispatch } from "react-redux";
+import { toggleCommentArea } from "../../Reducer/commentsSlice";
+// import CommentArea from "../Main/AllTheBooks/Comment/CommentArea";
 
-const CardBook = ({ img, title, category, price, asin }) => {
+const CardBook = ({ img, title, category, price, asin, onClick }) => {
   const [selected, setSelected] = useState(false);
+  const dispatch = useDispatch()
 
   const elementClicked = () => {
     setSelected(!selected);
+    dispatch(toggleCommentArea())
+    onClick()
   };
 
   const borderStyle = {
@@ -27,13 +32,11 @@ const CardBook = ({ img, title, category, price, asin }) => {
         <p>{category}</p>
         <p>{price}€</p>
       </Card>
-      {selected && <CommentArea asin={asin} />}
+      {/* {selected && <CommentArea asin={asin}/>} */}
     </>
   );
 };
 
 export default CardBook;
 
-// export const setSelectedCard = (selectedCard) => {
-//   return { type: 'SET_SELECTED_CARD', payload: selectedCard};
-// };
+

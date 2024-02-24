@@ -2,14 +2,12 @@ import { useState } from "react";
 import classes from "./Comments.module.css";
 import { deleteComment } from "./DeleteComment";
 
-const SingleComment = ({ comment, rate, author, _id }) => {
+const SingleComment = ({ comment, rate, author, id, asin }) => {
   const [isDeleted, setIsDeleted] = useState(false);
-
-  const commentId = _id;
 
   const handleDeleteComment = async () => {
     try {
-      await deleteComment(commentId);
+      await deleteComment(id);
       setIsDeleted(true);
     } catch (error) {
       console.error(error);
@@ -20,7 +18,7 @@ const SingleComment = ({ comment, rate, author, _id }) => {
   }
 
   return (
-    <div id={commentId} className={classes["border-comment"]}>
+    <div id={asin} className={classes["border-comment"]}>
       <p>{author}</p>
       <p>{comment}</p>
       <p>Rate:{rate}</p>

@@ -1,18 +1,17 @@
 import classes from "./CardStyleInputSearch.module.css";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { filterBooks, getBooks } from "../../../../Reducer/booksSlice";
 
-
 const SearchInput = () => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleInputSearch = (inputValue) => {
-      if(inputValue.length > 1) {
-        dispatch(filterBooks(inputValue))
-      } else {
-        dispatch(getBooks())
-      }
-  }
+    if (inputValue.length > 1) {
+      dispatch(filterBooks(inputValue));
+    } else {
+      dispatch(getBooks());
+    }
+  };
 
   return (
     <>
@@ -23,10 +22,8 @@ const SearchInput = () => {
           onChange={(e) => handleInputSearch(e.target.value)}
         />
       </div>
-      
     </>
   );
 };
 
 export default SearchInput;
-

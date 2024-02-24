@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import booksReducer from "./Reducer/booksSlice.js"
 import themeReducer from "./Reducer/themeSlice.js"
+import commentReducer from "./Reducer/commentsSlice.js"
 
 
 const reducer = combineReducers({
   booksData: booksReducer,
   theme: themeReducer,
+  comment: commentReducer
 });
 
 const store = configureStore({ reducer });

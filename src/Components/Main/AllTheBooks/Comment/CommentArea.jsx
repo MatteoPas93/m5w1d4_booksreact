@@ -1,45 +1,24 @@
 import AddComment from "./AddComments";
 import CommentList from "./CommentsList";
-import classes from "./Comments.module.css";
-import { Button } from "react-bootstrap";
-import { Modal } from "react-bootstrap";
-import { useState } from "react";
-// import { setSelectedCard } from "../../../Card/SingleBook";
-// import { useDispatch } from "react-redux";
+import "./Comments.module.css";
+import { useSelector } from "react-redux";
 
 const CommentArea = ({ asin }) => {
-  const [showModal, setShowModal] = useState(true);
-
-  // const dispatch = useDispatch()
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    // dispatch(setSelectedCard(false))
-  };
+  const isCommentAreaOpen = useSelector(
+    (state) => state.comment.isCommentAreaOpen
+  );
+  if (!isCommentAreaOpen) {
+    return null;
+  }
 
   return (
-    <Modal
-      className={classes["modal"]}
-      show={showModal}
-      onHide={handleCloseModal}
-    >
-      <Modal.Header>
-        <Modal.Title>Feedback</Modal.Title>
-      </Modal.Header>
-
-      <Modal.Body>
-        <div className={classes["commentsArea"]}>
-          <AddComment asin={asin} />
-          <CommentList asin={asin} />
-        </div>
-      </Modal.Body>
-
-      <Modal.Footer>
-        <Button onClick={handleCloseModal} variant="secondary">
-          Close
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <div className="col-lg-4 section-comments">
+      <h4>Comments</h4>
+      <div className="commentsArea">
+        <AddComment asin={asin} />
+        <CommentList asin={asin} />
+      </div>
+    </div>
   );
 };
 
