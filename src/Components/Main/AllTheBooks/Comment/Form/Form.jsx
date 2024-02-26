@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import classes from "./Form.module.css";
 import { deleteComment } from "../DeleteComment";
 import { useDispatch } from "react-redux";
-const FormMessage = ({asin, fetchComments}) => {
+const FormMessage = ({asin}) => {
   const [commentData, setCommentData] = useState();
   const [validated, setValidated] = useState(false);
   const [comments, setComments] = useState([]);
