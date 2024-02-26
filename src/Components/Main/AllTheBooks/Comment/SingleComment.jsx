@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from "./Comments.module.css";
+import "./Comments.css";
 import { deleteComment } from "./DeleteComment";
 
 const SingleComment = ({ comment, rate, author, id, asin }) => {
@@ -18,7 +18,7 @@ const SingleComment = ({ comment, rate, author, id, asin }) => {
   }
 
   return (
-    <div id={asin} className={classes["border-comment"]}>
+    <div id={asin} className="border-comment">
       <p>{author}</p>
       <p>{comment}</p>
       <p>Rate:{rate}</p>

@@ -36,14 +36,18 @@
     padding-inline: 10px;
 }
 
-.modal {
-    width: 400px;
-    height: 200px;
+.sectionComments {
+    /* width: 400px; */
+    height: 500px;
     overflow-y: scroll;
     box-shadow: -2px 2px 5px rgb(244, 102, 102);
+    border: 1px solid black;
+    position: fixed;
+    top: 130;
+    right: 0;
 }
 
-.modal button {
+.sectionComments button {
     background: #171717;
     color: white;
     font-family: "Caveat";
@@ -53,7 +57,7 @@
   }
   
   
-  .modal button:hover {
+  .sectionComments button:hover {
       color: rgb(244, 102, 102);
       background: #171717;
   }

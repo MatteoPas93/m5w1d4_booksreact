@@ -1,6 +1,6 @@
 import AddComment from "./AddComments";
 import CommentList from "./CommentsList";
-import "./Comments.module.css";
+import "./Comments.css";
 import { useSelector } from "react-redux";
 
 const CommentArea = ({ asin }) => {
@@ -12,7 +12,7 @@ const CommentArea = ({ asin }) => {
   }
 
   return (
-    <div className="col-lg-4 section-comments">
+    <div className="sectionComments col-lg-4">
       <h4>Comments</h4>
       <div className="commentsArea">
         <AddComment asin={asin} />
