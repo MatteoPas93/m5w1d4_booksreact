@@ -27,7 +27,7 @@
 
 
 .border-comment {
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     width: 95%;
     margin-top: 5px;
 }
@@ -37,18 +37,19 @@
 }
 
 .sectionComments {
-    /* width: 400px; */
     height: 500px;
     overflow-y: scroll;
     box-shadow: -2px 2px 5px rgb(244, 102, 102);
-    border: 1px solid black;
     position: fixed;
     top: 130;
     right: 0;
+    background: #171717;
+    color: white;
 }
 
 .sectionComments button {
-    background: #171717;
+    background: black;
+    border: 1px solid rgb(0, 0, 0);
     color: white;
     font-family: "Caveat";
     font-size: 13pt;
@@ -59,5 +60,6 @@
   
   .sectionComments button:hover {
       color: rgb(244, 102, 102);
-      background: #171717;
+      background: black;
+      border: 1px solid black;
   }
