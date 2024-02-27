@@ -17,19 +17,3 @@
   width: 400px;
 }
 
-.email-footer button {
-  width: 100px;
-  border-radius: 5px;
-  background: black;
-}
-
-.email-footer a {
-  color: white;
-  font-family: "Caveat";
-  font-size: 15pt;
-  text-decoration: none;
-}
-
-.email-footer a:hover {
-  color: rgb(244, 102, 102);
-}

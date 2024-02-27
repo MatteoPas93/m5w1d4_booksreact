@@ -22,7 +22,7 @@ export const fetchComments = async (asin) => {
 
     const data = await response.json();
     return data
-    // setData(data);
+  
   } catch (error) {
     console.error(error);
   }

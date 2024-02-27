@@ -1,17 +1,19 @@
 import './App.css';
-import NavigationBar from './Components/Navbar/Nav';
-import MainContainer from './Components/Main/Main';
-import AppWelcome from './Components/Welcome/Welcome';
-import Footer from './Components/Footer/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Homepage from './Pages/Homepage';
+import ErrorPage from './Pages/ErrorPage';
+import BookDetail from './Pages/BookDetail';
 
 function App() {
   return (
-    <>
-    <AppWelcome/>
-    <NavigationBar/>
-    <MainContainer/>
-    <Footer/>
-   </>
+    <BrowserRouter>
+    <Routes>
+      <Route exact path='/home' element={<Homepage/>} />
+      <Route path='/book/:id' element={<BookDetail/>} />
+      <Route path='*' element={<ErrorPage/>} />
+    </Routes>
+  
+   </BrowserRouter>
   );
 }
 

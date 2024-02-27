@@ -18,3 +18,19 @@
 .card p {
   padding-left: 10px;
 }
+
+
+.button-style {
+  background: #171717;
+  color: white;
+  font-family: "Caveat";
+  font-size: 13pt;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-left: 160px;
+}
+
+.button-style:hover {
+  color: rgb(244, 102, 102);
+    background: #171717;
+}
