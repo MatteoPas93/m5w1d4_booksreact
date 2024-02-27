@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import classes from "./StylePages/BookDetail.module.css";
 import NavigationBar from "../Components/Navbar/Nav";
 import Footer from "../Components/Footer/Footer";
+import { Spinner } from "react-bootstrap";
 
 const key =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNmNjhlMjA0NTcyZjAwMTk0OTM5NTgiLCJpYXQiOjE3MDgwOTE2MTgsImV4cCI6MTcwOTMwMTIxOH0.4WIOaHC0kc_1yvuly5YFr9w1gAL-ie7rgbByotZWHyg";
@@ -12,6 +13,7 @@ const BookDetail = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getBookDetail = async () => {
     try {
@@ -28,6 +30,10 @@ const BookDetail = () => {
       getBookComments(data.asin);
     } catch (error) {
       console.error(error);
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     }
   };
 
@@ -55,29 +61,46 @@ const BookDetail = () => {
   return (
     <>
       <NavigationBar />
-      <div className={classes["container"]}>
-        <div className={classes["container-book"]}>
-          {book && (
-            <>
-              <h3>{book.title}</h3>
-              <img className={classes["imgDetail"]} src={book.img} alt="img" />
-              <h6>Category: {book.category}</h6>
-              <h6>Price: {book.price}</h6>
-            </>
-          )}
-        </div>
-        <div className={classes["allComments-container"]}>
-          <h4>Comments:</h4>
+      {loading ? (
+        <Spinner
+          animation="border"
+          role="status"
+          variant="danger"
+          style={{width: "200px",
+                  height: "200px"}}
+          className={classes["spinner"]}
+        >
+          <span className="sr-only"></span>
+        </Spinner>
+      ) : (
+        <div className={classes["container"]}>
+          <div className={classes["container-book"]}>
+            {book && (
+              <>
+                <h3>{book.title}</h3>
+                <img
+                  className={classes["imgDetail"]}
+                  src={book.img}
+                  alt="img"
+                />
+                <h6>Category: {book.category}</h6>
+                <h6>Price: {book.price}</h6>
+              </>
+            )}
+          </div>
+          <div className={classes["allComments-container"]}>
+            <h4>Comments:</h4>
 
-          {comments.map((comment) => (
-            <div className={classes["singleComment-container"]}>
-              <h6> Author: {comment.author} </h6>
-              <p> {comment.comment} </p>
-              <p> Rate: {comment.rate} </p>
-            </div>
-          ))}
+            {comments.map((comment, i) => (
+              <div key={i} className={classes["singleComment-container"]}>
+                <h6> Author: {comment.author} </h6>
+                <p> {comment.comment} </p>
+                <p> Rate: {comment.rate} </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <Footer />
     </>
   );

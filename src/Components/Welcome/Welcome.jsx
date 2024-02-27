@@ -7,6 +7,10 @@ const AppWelcome = () => {
   const [showDiv, setShowDiv] = useState(true);
 
   useEffect(() => {
+    const showDivStored = sessionStorage.getItem("showDiv");
+    if (showDivStored === "false") {
+      setShowDiv(false);
+    }
     const interval = setInterval(() => {
       setCounter((prevCounter) => prevCounter - 1);
     }, 1000);
@@ -19,6 +23,7 @@ const AppWelcome = () => {
   useEffect(() => {
     if (counter === 0) {
       setShowDiv(false);
+      sessionStorage.setItem("showDiv", "false")
     }
   }, [counter]);
 
