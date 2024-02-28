@@ -1,0 +1,21 @@
+.container-error {
+    position: relative;
+    text-align: center;
+}
+
+.button-home {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.button-home a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
