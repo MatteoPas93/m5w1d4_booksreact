@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { apiKey, handleRendering } from "../../../../../Reducer/booksSlice";
+import { apiKey } from "../../../../../Reducer/booksSlice";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -57,7 +57,6 @@ const FormMessage = ({asin}) => {
     if (commentData) {
       setComments((prevComments) => [...prevComments, commentData]);
       sendComment();
-      dispatch(handleRendering())
     }
   }, [commentData, dispatch]);
 

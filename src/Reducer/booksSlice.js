@@ -8,7 +8,6 @@ const initialState = {
   books: [],
   isLoading: false,
   error: null,
-  rendering: false
 };
 
 export const getBooks = createAsyncThunk("books/GETBooks", async () => {
@@ -33,10 +32,6 @@ const booksSlice = createSlice({
         return book.title.toLowerCase().includes(lowerCasePayload);
       });
     },
-    handleRendering: (state) => {
-      state.rendering = !state.rendering
-    }
-    
   },
   extraReducers: (builder) => {
     builder
