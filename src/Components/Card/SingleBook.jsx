@@ -4,21 +4,20 @@ import classes from "./SingleBook.module.css";
 import { useDispatch } from "react-redux";
 import { toggleCommentArea } from "../../Reducer/commentsSlice";
 import { Link } from "react-router-dom";
-// import CommentArea from "../Main/AllTheBooks/Comment/CommentArea";
 
 const CardBook = ({ img, title, category, price, asin, onClick }) => {
   const [selected, setSelected] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const elementClicked = () => {
     setSelected(!selected);
-    dispatch(toggleCommentArea())
-    onClick()
+    dispatch(toggleCommentArea());
+    onClick();
   };
 
   const borderStyle = {
     borderColor: selected ? "red" : "black",
-    borderWidth: selected ? "2px" : "2px"
+    borderWidth: selected ? "2px" : "2px",
   };
 
   return (
@@ -34,14 +33,11 @@ const CardBook = ({ img, title, category, price, asin, onClick }) => {
         <p>{category}</p>
         <p>{price}€</p>
         <Link to={`/book/${asin}`}>
-        <button className={classes["button-style"]}>Detail</button>
+          <button className={classes["button-style"]}>Detail</button>
         </Link>
       </Card>
-      {/* {selected && <CommentArea asin={asin}/>} */}
     </>
   );
 };
 
 export default CardBook;
-
-

@@ -35,7 +35,6 @@ const booksSlice = createSlice({
     },
     handleRendering: (state) => {
       state.rendering = !state.rendering
-      console.log(state.rendering);
     }
     
   },
