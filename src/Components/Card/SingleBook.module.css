@@ -1,7 +1,8 @@
 .card {
   width: 220px;
+  height: 180px;
   justify-content: space-between;
-  box-shadow: -5px 5px 5px rgb(244, 102, 102);
+  /* box-shadow: -5px 5px 5px rgb(244, 102, 102); */
   overflow: hidden;
 }
 

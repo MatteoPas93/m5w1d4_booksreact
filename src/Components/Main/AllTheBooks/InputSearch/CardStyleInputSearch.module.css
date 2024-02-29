@@ -14,7 +14,7 @@
 
 .input-search input {
   border-radius: 5px;
-  box-shadow: -2px 2px 5px rgb(244, 102, 102);
+  /* box-shadow: -2px 2px 5px rgb(244, 102, 102); */
 }
 
 .input-search button {
