@@ -16,7 +16,7 @@ const reducer = combineReducers({
   comment: commentReducer
 });
 
-const store = configureStore({ reducer });
+export const store = configureStore({ reducer });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

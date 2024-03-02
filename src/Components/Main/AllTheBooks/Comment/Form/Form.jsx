@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import classes from "./Form.module.css";
 import { deleteComment } from "../DeleteComment";
 import { useDispatch } from "react-redux";
+import { fetchComments } from "../CommentsList";
 const FormMessage = ({asin}) => {
   const [commentData, setCommentData] = useState();
   const [validated, setValidated] = useState(false);
@@ -47,7 +48,7 @@ const FormMessage = ({asin}) => {
       try {
         if (commentData) {
           await fetchPost(commentData);
-           
+          
         }
       } catch (error) {
         console.error(error);

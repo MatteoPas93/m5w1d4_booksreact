@@ -12,7 +12,7 @@ const ButtonTheme = () => {
       themeMode === "light" ? "dark-theme" : "light-theme";
   };
 
-  return <button className="button-theme" onClick={toggleThemeHandler}>Toggle Theme</button>;
+  return <button className="button-theme" onClick={toggleThemeHandler}>Light/Dark</button>;
 };
 
 export default ButtonTheme;

@@ -23,6 +23,7 @@ const CardBook = ({ img, title, category, price, asin, onClick }) => {
   return (
     <>
       <Card
+      data-testid="card-border"
         className={classes["card"]}
         key={asin}
         style={borderStyle}

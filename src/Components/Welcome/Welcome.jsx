@@ -31,10 +31,10 @@ const AppWelcome = () => {
     <div>
       {showDiv && (
         <div className={classes["container-title"]}>
-          <p> Most popular fantasy book ecommerce </p>
+          <p data-testid="messagePage"> Most popular fantasy book ecommerce </p>
           <NavLogo />
 
-          <p> This message will disappear in {counter} seconds!! </p>
+          <p data-testid="counterPage"> This message will disappear in {counter} seconds!! </p>
         </div>
       )}
     </div>
