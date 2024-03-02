@@ -12,7 +12,7 @@ const CardBook = ({ img, title, category, price, asin, onClick }) => {
   const elementClicked = () => {
     setSelected(!selected);
     dispatch(toggleCommentArea());
-    onClick();
+    
   };
 
   const borderStyle = {
@@ -23,11 +23,11 @@ const CardBook = ({ img, title, category, price, asin, onClick }) => {
   return (
     <>
       <Card
-      data-testid="card-border"
+      data-testid="card"
         className={classes["card"]}
         key={asin}
         style={borderStyle}
-        onClick={elementClicked}
+        onClick={() => { onClick(); elementClicked()}}
       >
         <img src={img} alt="Book" />
         <h4>{title}</h4>

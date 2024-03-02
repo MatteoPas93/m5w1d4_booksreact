@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { apiKey } from "../../../../../Reducer/booksSlice";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -8,6 +7,9 @@ import classes from "./Form.module.css";
 import { deleteComment } from "../DeleteComment";
 import { useDispatch } from "react-redux";
 import { fetchComments } from "../CommentsList";
+
+
+const apiKey = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUyZjYzOGE4MDg3ZjAwMTljMmEzNWIiLCJpYXQiOjE3MDkzNzI5ODQsImV4cCI6MTcxMDU4MjU4NH0.eF-96f7xZDAdZfOowXpMBNcIJ93rlnbrSqnIlIwpASM"
 const FormMessage = ({asin}) => {
   const [commentData, setCommentData] = useState();
   const [validated, setValidated] = useState(false);
@@ -48,7 +50,7 @@ const FormMessage = ({asin}) => {
       try {
         if (commentData) {
           await fetchPost(commentData);
-          
+          await fetchComments(asin)
         }
       } catch (error) {
         console.error(error);
@@ -58,8 +60,9 @@ const FormMessage = ({asin}) => {
     if (commentData) {
       setComments((prevComments) => [...prevComments, commentData]);
       sendComment();
+      
     }
-  }, [commentData, dispatch]);
+  }, [commentData, asin, dispatch]);
 
   return (
     <div className={classes["form-width"]}>
