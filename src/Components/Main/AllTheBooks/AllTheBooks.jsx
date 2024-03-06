@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { allBooks, getBooks } from "../../../Reducer/booksSlice";
 import "./AllTheBooks.css";
 import { Spinner } from "react-bootstrap";
+
 const EpicBooks = ({ onBookClick }) => {
   const [loading, setLoading] = useState(true);
   const books = useSelector(allBooks);
@@ -19,6 +20,7 @@ const EpicBooks = ({ onBookClick }) => {
   const mapArray = (array) => {
     return array.map((book) => (
       <CardBook
+        data-testid= "card"
         title={book.title}
         img={book.img}
         category={book.category}

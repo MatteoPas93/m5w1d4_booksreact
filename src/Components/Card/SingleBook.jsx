@@ -16,8 +16,7 @@ const CardBook = ({ img, title, category, price, asin, onClick }) => {
   };
 
   const borderStyle = {
-    borderColor: selected ? "red" : "black",
-    borderWidth: selected ? "2px" : "1px",
+    border: selected ? "2px solid red" : "1px solid black",
   };
 
   return (

@@ -10,7 +10,7 @@ import themeReducer from "./Reducer/themeSlice.js"
 import commentReducer from "./Reducer/commentsSlice.js"
 
 
-const reducer = combineReducers({
+ export const reducer = combineReducers({
   booksData: booksReducer,
   theme: themeReducer,
   comment: commentReducer

@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/Footer";
 import { Spinner } from "react-bootstrap";
 
 const key =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNmNjhlMjA0NTcyZjAwMTk0OTM5NTgiLCJpYXQiOjE3MDgwOTE2MTgsImV4cCI6MTcwOTMwMTIxOH0.4WIOaHC0kc_1yvuly5YFr9w1gAL-ie7rgbByotZWHyg";
+"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUyZjYzOGE4MDg3ZjAwMTljMmEzNWIiLCJpYXQiOjE3MDkzNzI5ODQsImV4cCI6MTcxMDU4MjU4NH0.eF-96f7xZDAdZfOowXpMBNcIJ93rlnbrSqnIlIwpASM";
 
 const BookDetail = () => {
   const { id } = useParams();

@@ -14,10 +14,11 @@
 //     nanoid: jest.fn(() => 'mocked_nanoid')
 //   }));
 
-// test("Render CommentArea components", () => {
+// test("Render CommentArea components", async () => {
+//     await act(async () => {
 //     render(<Provider store={store}> <CommentArea/> </Provider> )
-
-//     const commentsTitle = screen.queryByTestId('commentsTitle');
+// })
+//     const commentsTitle = screen.queryByTestId('comments-title');
 //     expect(commentsTitle).toBeTextContent('Comments')
     
    
