@@ -8,9 +8,9 @@ import { deleteComment } from "../DeleteComment";
 import { useDispatch } from "react-redux";
 import { fetchComments } from "../CommentsList";
 
-
-const apiKey = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUyZjYzOGE4MDg3ZjAwMTljMmEzNWIiLCJpYXQiOjE3MDkzNzI5ODQsImV4cCI6MTcxMDU4MjU4NH0.eF-96f7xZDAdZfOowXpMBNcIJ93rlnbrSqnIlIwpASM"
-const FormMessage = ({asin}) => {
+const apiKey =
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUyZjYzOGE4MDg3ZjAwMTljMmEzNWIiLCJpYXQiOjE3MDkzNzI5ODQsImV4cCI6MTcxMDU4MjU4NH0.eF-96f7xZDAdZfOowXpMBNcIJ93rlnbrSqnIlIwpASM";
+const FormMessage = ({ asin }) => {
   const [commentData, setCommentData] = useState();
   const [validated, setValidated] = useState(false);
   const [comments, setComments] = useState([]);
@@ -35,7 +35,7 @@ const FormMessage = ({asin}) => {
   };
 
   const fetchPost = async (comment) => {
-   await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+    await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
       method: "POST",
       body: JSON.stringify(comment),
       headers: {
@@ -50,7 +50,7 @@ const FormMessage = ({asin}) => {
       try {
         if (commentData) {
           await fetchPost(commentData);
-          await fetchComments(asin)
+          await fetchComments(asin);
         }
       } catch (error) {
         console.error(error);
@@ -60,9 +60,10 @@ const FormMessage = ({asin}) => {
     if (commentData) {
       setComments((prevComments) => [...prevComments, commentData]);
       sendComment();
-      
     }
   }, [commentData, asin, dispatch]);
+
+  console.log(asin);
 
   return (
     <div className={classes["form-width"]}>
@@ -111,7 +112,12 @@ const FormMessage = ({asin}) => {
 
       {comments &&
         comments.map((comment, index) => (
-          <div id={comment._id} asin={comment.elementId} className={classes["border-comment"]} key={index}>
+          <div
+            id={comment._id}
+            asin={comment.elementId}
+            className={classes["border-comment"]}
+            key={index}
+          >
             <p>{comment.comment}</p>
             <p>Rate: {comment.rate}</p>
             <button onClick={deleteComment} className="mb-2 ms-2">

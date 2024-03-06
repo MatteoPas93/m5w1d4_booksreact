@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isCommentAreaOpen: false
+  isCommentAreaOpen: false,
+  commentId: null
 };
 
 const commentSlice = createSlice({
@@ -9,10 +10,13 @@ const commentSlice = createSlice({
   initialState,
   reducers: {
     toggleCommentArea: state => {
-      state.isCommentAreaOpen = !state.isCommentAreaOpen;
-    }
+      state.isCommentAreaOpen = !state.isCommentAreaOpen;  
+    },
+    setIdForDelete: (state, action) => {
+       state.commentId = action.payload;
+    } 
   }
 });
 
-export const { toggleCommentArea } = commentSlice.actions;
+export const { toggleCommentArea, setIdForDelete } = commentSlice.actions;
 export default commentSlice.reducer;

@@ -14,12 +14,18 @@
 //     nanoid: jest.fn(() => 'mocked_nanoid')
 //   }));
 
-// test("Render CommentArea components", async () => {
-//     await act(async () => {
-//     render(<Provider store={store}> <CommentArea/> </Provider> )
-// })
-//     const commentsTitle = screen.queryByTestId('comments-title');
-//     expect(commentsTitle).toBeTextContent('Comments')
-    
-   
-// })
+
+// test('comments section is rendered correctly', () => {
+  
+//     render(
+//       <Provider store={store}>
+//         <CommentArea />
+//       </Provider>
+//     );
+
+//     const commentsPage = screen.getByTestId('comments-title');
+//     expect(commentsPage).toBeInTheDocument()
+
+  
+//     // expect(getByText('Comments')).toBeInTheDocument();
+//   });
