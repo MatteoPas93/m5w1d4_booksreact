@@ -12,7 +12,7 @@ const CommentArea = ({ asin }) => {
   }
 
   return (
-    <div data-testid="comments-title" className="sectionComments col-lg-4">
+    <div className="sectionComments col-lg-4" data-testid="comments-area" >
       <h4 >Comments</h4>
       <div className="commentsArea">
         <AddComment asin={asin} />
