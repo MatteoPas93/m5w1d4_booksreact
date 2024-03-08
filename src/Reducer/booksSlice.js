@@ -40,7 +40,7 @@ const booksSlice = createSlice({
       })
       .addCase(getBooks.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.books = action.payload;
+        state.books = action.payload || [];
       })
       .addCase(getBooks.rejected, (state) => {
         state.isLoading = false;

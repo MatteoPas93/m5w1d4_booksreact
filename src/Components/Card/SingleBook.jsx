@@ -12,7 +12,7 @@ const CardBook = ({ img, title, category, price, asin, onClick }) => {
   const elementClicked = () => {
     setSelected(!selected);
     dispatch(toggleCommentArea());
-    onClick();
+    onClick?.();
   };
 
   const borderStyle = {

@@ -3,33 +3,32 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import booksSlice from '../Reducer/booksSlice'; // Assume this is your structure
 import EpicBooks from '../Components/Main/AllTheBooks/AllTheBooks';
-import { getBooks } from '../Reducer/booksSlice';
-import { store } from '..';
-import { allBooks } from '../Reducer/booksSlice';
 
-jest.mock('../Reducer/booksSlice');
-jest.mock(allBooks)
-
-const mockBooks = [
-  { asin: '123', title: 'Book 1', desc: 'Description 1', price: '$10', src: 'path/to/img1.jpg' },
-  { asin: '456', title: 'Book 2', desc: 'Description 2', price: '$15', src: 'path/to/img2.jpg' },
-];
 
 jest.mock("axios", () => ({
   get: jest.fn(() => Promise.resolve({ data: {} })),
   post: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 
-jest.mock("nanoid", () => ({
-  nanoid: jest.fn(() => "mocked_nanoid"),
-}));
+// Creating a mock store with predefined state
+const store = configureStore({
+  reducer: {
+    booksData: booksSlice,
+  },
+  preloadedState: {
+    booksData: {
+      books: [
+        { asin: '123', title: 'Book 1', img: 'path/to/img1.jpg', category: 'Category 1', price: '10' },
+        { asin: '456', title: 'Book 2', img: 'path/to/img2.jpg', category: 'Category 2', price: '15' },
+      ],
+    },
+  },
+});
 
-describe('BooksDisplay Component', () => {
-  beforeEach(() => {
-    getBooks.mockResolvedValue(mockBooks);
-  });
-
+describe('EpicBooks Component', () => {
   test('renders the correct number of cards based on fetched data', async () => {
     render(
       <MemoryRouter>
@@ -39,12 +38,12 @@ describe('BooksDisplay Component', () => {
       </MemoryRouter>
     );
 
-    await screen.findAllByTestId('card');
-
-    const cards = screen.getAllByTestId('card');
-    expect(cards.length).toBe(mockBooks.length);
+    // Waiting for the card components to be rendered
+    const cards = await screen.findAllByTestId('card');
+    expect(cards).toHaveLength(2);
   });
 });
+
 
 
 
