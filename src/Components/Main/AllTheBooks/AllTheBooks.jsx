@@ -13,6 +13,7 @@ const EpicBooks = ({ onBookClick }) => {
     const fetchBooks = async () => {
       try {
         dispatch(getBooks());
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -61,7 +62,6 @@ const EpicBooks = ({ onBookClick }) => {
 };
 
 export default EpicBooks;
-
 
 // import React, { useEffect, useState } from "react";
 // import CardBook from "../../Card/SingleBook";
